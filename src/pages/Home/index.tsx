@@ -24,7 +24,9 @@ const Home: React.FC = () => {
       let randomChosen = Math.floor(Math.random() * originals[0].items.results.length - 1)
       let chosen = originals[0].items.results[randomChosen]
       let chosenInfo =  await TMDB.getMovieInfo(chosen.id, 'tv')
-      setFeaturedData(chosenInfo)
+      if (chosenInfo) {
+        setFeaturedData(chosenInfo)
+      }
 
       console.log('Original chosen: ', featuredData)
     }
