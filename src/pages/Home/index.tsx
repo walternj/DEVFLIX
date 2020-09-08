@@ -27,8 +27,6 @@ const Home: React.FC = () => {
       if (chosenInfo) {
         setFeaturedData(chosenInfo)
       }
-
-      console.log('Original chosen: ', featuredData)
     }
 
     loadAll()
