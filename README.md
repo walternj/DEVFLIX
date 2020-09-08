@@ -1,4 +1,4 @@
-###DEVFLIX
+# DEVFLIX
 
 DEVFLIX est un Clone de l'interface utilisateur du site de Streaming NETFLIX.
 
@@ -9,4 +9,5 @@ Ce projet recevra de mise à jour importante au fur et à mesure.
 
 Vous pouvez avoir un aperçu de son fonctionnement accèdent à ce lien : https://devflix-by-walternj.netlify.app/
 
-[!https://github.com/walternj/DEVFLIX/blob/master/Capture.PNG]
+
+![DEVFLIX](https://github.com/walternj/DEVFLIX/blob/master/Capture.PNG)
