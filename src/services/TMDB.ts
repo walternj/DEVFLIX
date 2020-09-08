@@ -55,20 +55,6 @@ export default {
         )
       },
       {
-        slug: 'sci-fi_fantasy',
-        title: 'Science-Fiction & Fantastique',
-        items: await basicFetch(
-          `/discover/movie?with_genres=10765&language=fr&api_key=${process.env.REACT_APP_API_KEY}`
-        )
-      },
-      {
-        slug: 'animation',
-        title: 'Animation',
-        items: await basicFetch(
-          `/discover/movie?with_genres=30&language=fr&api_key=${process.env.REACT_APP_API_KEY}`
-        )
-      },
-      {
         slug: 'action',
         title: 'Action',
         items: await basicFetch(
@@ -101,12 +87,13 @@ export default {
 
   getMovieInfo: async(movieId: number, type: string) =>  {
     let info = {}
-
     if (movieId) {
 
       switch(type) {
+
         case 'movie':
-          return info = await basicFetch(`/movie/${movieId}?language=fr&api_key=${process.env.REACT_APP_REACT_APP_API_KEY}`);
+          info = await basicFetch(`/movie/${movieId}?language=fr&api_key=${process.env.REACT_APP_REACT_APP_API_KEY}`)
+          return info;
 
         case 'tv':
           return info = await basicFetch(`/tv/${movieId}?language=fr&api_key=${process.env.REACT_APP_API_KEY}`);
