@@ -1,5 +1,5 @@
 
-const APP_API_BASE='https://api.themoviedb.org/3'
+//const APP_API_BASE='https://api.themoviedb.org/3'
 /*
   - Originals netflix
   - treanding
