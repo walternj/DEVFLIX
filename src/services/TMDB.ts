@@ -1,5 +1,5 @@
 
-const APP_API_BASE='https://api.themoviedb.org/3'
+
 /*
   - Originals netflix
   - treanding
@@ -26,7 +26,7 @@ export interface FilmData {
 }
 
   const basicFetch = async (endpoint: string) => {
-  const res = await fetch(`${APP_API_BASE}${endpoint}`)
+  const res = await fetch(`${process.env.REACT_APP_APP_API_BASE}${endpoint}`)
   const json = res.json()
 
   return json
