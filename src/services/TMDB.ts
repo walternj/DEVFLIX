@@ -26,7 +26,7 @@ export interface FilmData {
 }
 
   const basicFetch = async (endpoint: string) => {
-  const res = await fetch(`${APP_API_BASE}${endpoint}`)
+  const res = await fetch(`https://api.themoviedb.org/3${endpoint}`)
   const json = res.json()
 
   return json
