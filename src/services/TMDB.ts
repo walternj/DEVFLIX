@@ -24,7 +24,9 @@ export interface FilmData {
 }
 
   const basicFetch = async (endpoint: string) => {
-  const res = await fetch(`https://api.themoviedb.org/3}${endpoint}`)
+  const res = await fetch(`https://api.themoviedb.org/3}${endpoint}`, {
+    mode: "cors"
+  })
   const json = res.json()
 
   return json
