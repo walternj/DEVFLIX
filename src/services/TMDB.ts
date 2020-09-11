@@ -24,9 +24,7 @@ export interface FilmData {
   }]}
 }
   const basicFetch = async (endpoint: string) => {
-    const res = await fetch(`${process.env.REACT_APP_API_BASE}${endpoint}`,{
-      mode: 'no-cors'
-    })
+    const res = await fetch(`https://api.themoviedb.org/3${endpoint}`)
     const json = res.json()
 
     return json
