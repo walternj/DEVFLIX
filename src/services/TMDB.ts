@@ -24,10 +24,16 @@ export interface FilmData {
   }]}
 }
   const basicFetch = async (endpoint: string) => {
-    const res = await fetch(`https://api.themoviedb.org/3${endpoint}`)
-    const json = res.json()
+    try {
+      const res = await fetch(`https://api.themoviedb.org/3${endpoint}`,{
+        headers: {'Access-Control-Allow-Origin': '*'}
+      })
+      const json = res.json()
 
-    return json
+      return json
+    } catch (error) {
+      console.log(error)
+    }
   }
 
 export default {
