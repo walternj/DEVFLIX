@@ -25,7 +25,7 @@ export interface FilmData {
 }
   const basicFetch = async (endpoint: string) => {
     const res = await fetch(`${process.env.REACT_APP_API_BASE}${endpoint}`,{
-      mode: 'cors'
+      mode: 'no-cors'
     })
     const json = res.json()
 
