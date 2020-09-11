@@ -1,3 +1,4 @@
+
 /*
   - Originals netflix
   - treanding
@@ -22,15 +23,12 @@ export interface FilmData {
     original_title: string
   }]}
 }
-
   const basicFetch = async (endpoint: string) => {
-  const res = await fetch(`https://api.themoviedb.org/3}${endpoint}`, {
-    mode: "no-cors"
-  })
-  const json = res.json()
+    const res = await fetch(`${process.env.REACT_APP_API_BASE}${endpoint}`)
+    const json = res.json()
 
-  return json
-}
+    return json
+  }
 
 export default {
   getHomeList: async (): Promise<FilmData[]> => {
