@@ -28,8 +28,8 @@ export interface FilmData {
       const res = await fetch(`https://api.themoviedb.org/3${endpoint}`,
       {
         headers:
-          { 'Access-Control-Allow-Origin': 'https://api.themoviedb.org/3',
-            'Access-Control-Allow-Headers': 'Origin, X-Requested-Width, Content-type, Accept'
+          { 'Access-Control-Allow-Origin': 'https://devflix-by-walternj.netlify.app',
+
           }
       })
       const json = res.json()
