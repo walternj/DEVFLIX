@@ -29,7 +29,7 @@ export interface FilmData {
       {
         headers:
           { 'Access-Control-Allow-Origin': '*',
-            'Access-Control-Allow-Headers': 'Origin, X-Requested-Width, Content-type, Accept  Authorization',
+            'Access-Control-Allow-Headers': '*',
             "Access-Control-Allow-Credentials": "true",
           }
       })
