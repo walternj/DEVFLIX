@@ -25,7 +25,13 @@ export interface FilmData {
 }
   const basicFetch = async (endpoint: string) => {
     try {
-      const res = await fetch(`${endpoint}`)
+      const res = await fetch(`https://api.themoviedb.org/3${endpoint}`,
+      {
+        headers:
+          { 'Access-Control-Allow-Origin': 'https://api.themoviedb.org/3',
+            'Access-Control-Allow-Headers': 'Origin, X-Requested-Width, Content-type, Accept'
+          }
+      })
       const json = res.json()
 
       return json
