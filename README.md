@@ -9,9 +9,9 @@ Ce projet recevra de mises à jour importantes au fur et à mesure.
 
 Vous pouvez avoir un aperçu de son fonctionnement en accèdent à ce lien : https://devflix-by-walternj.netlify.app/
 
-<p float="left">
-  <img src="https://github.com/walternj/DEVFLIX/blob/master/Capture_mobile.png" width="200" />
-  <img src="https://github.com/walternj/DEVFLIX/blob/master/Capture.PNG" width="700" />
+<p float="center">
+  <img src="https://github.com/walternj/DEVFLIX/blob/master/Capture_mobile.png" width="250" />
+  <img src="https://github.com/walternj/DEVFLIX/blob/master/Capture.PNG" width="800" />
 >
 </p>
 
