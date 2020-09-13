@@ -10,7 +10,7 @@ Ce projet recevra de mises à jour importantes au fur et à mesure.
 Vous pouvez avoir un aperçu de son fonctionnement en accèdent à ce lien : https://devflix-by-walternj.netlify.app/
 
 <p float="center">
-   <img src="https://github.com/walternj/DEVFLIX/blob/master/Capture.PNG" width="84%" />
+   <img src="https://github.com/walternj/DEVFLIX/blob/master/Capture.PNG" width="83%" />
   <img src="https://github.com/walternj/DEVFLIX/blob/master/Capture_mobile.png" width="16%" />
 </p>
 
