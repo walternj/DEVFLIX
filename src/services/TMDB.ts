@@ -25,16 +25,10 @@ export interface FilmData {
 }
   const basicFetch = async (endpoint: string) => {
     try {
-      const res = await fetch(`https://api.themoviedb.org/3${endpoint}`, {
-        headers: {
-          "Acces-Control-Allow-Origin": "*",
-          "Access-Control-Request-Methods": "GET, HEAD, POST, PUT, DELETE, OPTIONS",
-          "Access-Control-Expose-Headers": "ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After, Content-Length, Content-Range",
-        }
-      })
-      const json = res.json()
-
+      const req = await fetch(`${process.env.REACT_APP_API_BASE}${endpoint}`)
+      const json = await req.json()
       return json
+
     } catch (error) {
       console.log(error)
     }
@@ -47,7 +41,7 @@ export default {
         slug: 'originals',
         title: 'Originaux de NetFlix',
         items: await basicFetch(
-          `/discover/tv/?with_network=213&language=fr&api_key=${process.env.REACT_APP_API_KEY}`
+          `/discover/tv/?with_network=213&language=fr&api_key=${process.env.REACT_APP_API_KEY}`,
         )
       },
       {
