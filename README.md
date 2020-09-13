@@ -2,7 +2,7 @@
 
 DEVFLIX est un Clone de l'interface utilisateur du site de Streaming NETFLIX.
 
-Ce projet a était développé par moi avec le but de m'entraîner dans l'utilisation de ReactJS avec TypeSCript, Redux et Styled-Components.
+Ce projet a était développé par moi avec le but de m'entraîner dans l'utilisation de <strong>ReactJS</strong> avec <strong>TypeSCript, Redux et Styled-Components</strong>.
 Les images et données présentées sont de provenance de l'API TMDB.
 
 Ce projet recevra de mises à jour importantes au fur et à mesure. 
