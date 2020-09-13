@@ -41,7 +41,7 @@ export default {
         slug: 'originals',
         title: 'Originaux de NetFlix',
         items: await basicFetch(
-          `/discover/tv/?with_network=213&language=fr&api_key=${process.env.REACT_APP_API_KEY}`,
+          `/discover/tv?with_network=213&language=fr&api_key=${process.env.REACT_APP_API_KEY}`,
         )
       },
       {
@@ -55,7 +55,7 @@ export default {
         slug: 'toprated',
         title: 'Les mieux notés',
         items: await basicFetch(
-          `/movie/top_rated/?&language=fr&api_key=${process.env.REACT_APP_API_KEY}`
+          `/movie/top_rated?&language=fr&api_key=${process.env.REACT_APP_API_KEY}`
         )
       },
       {
