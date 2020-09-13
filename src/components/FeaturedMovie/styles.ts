@@ -11,13 +11,13 @@ export const Container = styled.section`
     z-index: 3;
     width: inherit;
     height: inherit;
-    background: linear-gradient(to top, #111 10%, transparent 90% );
+    background: linear-gradient(to top, var(--color-background) 10%, transparent 90% );
 
     .featured--horizontal {
       z-index: 3;
       width: inherit;
       height: inherit;
-      background: linear-gradient(to right, #111 30%, transparent 70% );
+      background: linear-gradient(to right, var(--color-background) 30%, transparent 70% );
 
       display: flex;
       flex-direction: column;
@@ -35,7 +35,7 @@ export const Container = styled.section`
       .featured--genres {
         margin-top: 15px;
         font-size: 18px;
-        color: #999;
+        color: var(--color-grey-text);
       }
 
       @media (max-width:768px) {
@@ -66,14 +66,14 @@ export const Container = styled.section`
       }
 
       .featured--points {
-        color: #46d369;
+        color: var(--color-green-text);
       }
     }
 
     .featured--overview {
       margin-top: 15px;
       font-size: 20px;
-      color: #999;
+      color: var(--color-grey-text);
       max-width: 50%;
       max-height: 51%;
       overflow-y: hidden;
@@ -110,13 +110,13 @@ export const ButtonsContainer =  styled.div`
   }
 
   .featured--watchbutton {
-    background-color: #fff;
-    color: #000;
+    background-color: var(--color-primary);
+    color: var(--color-black);
   }
 
   .featured--mylistbutton {
-    background-color: #333;
-    color: #fff;
+    background-color: var(--color-grey-button);
+    color: var(--color-white-button);
   }
 
   @media (max-width:768px) {

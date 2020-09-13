@@ -13,7 +13,7 @@ export const Container = styled.div`
 const iconCSS = css`
   width: 40px;
   height: 40px;
-  fill: #fff;
+  fill: var(--color-primary);
 `;
 
 export const NavLeftIcon = styled(MdNavigateBefore)`

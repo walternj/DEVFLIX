@@ -15,7 +15,7 @@ export const Loading = styled.div`
   right: 0;
   bottom: 0;
   z-index: 8;
-  background: #000;
+  background: var(--color-black);
   display: flex;
   justify-content: center;
   align-items: center;

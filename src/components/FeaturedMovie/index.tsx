@@ -1,6 +1,7 @@
-import React, { useEffect } from 'react';
+import React, { useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
-import { Container, ButtonsContainer } from './styles';
+import { Container, ButtonsContainer } from './styles'
 
 interface FeatureProps {
   item?:{
@@ -51,8 +52,9 @@ const FeaturedMovie: React.FC<FeatureProps> = ({item}) => {
           <span className="featured--overview">{description}</span>
 
           <ButtonsContainer>
-              <a href={`/watch/${item?.id}`} className="featured--watchbutton">Regarder</a>
-              <a href={`/list/add/${item?.id}`}className="featured--mylistbutton">+ Ma Liste</a>
+              {/* <a href={`/watch/${item?.id}`} className="featured--watchbutton">Regarder</a> */}
+              <Link to="/details" className="featured--watchbutton">Regarder</Link>
+              <Link to={`/list/add/${item?.id}`}className="featured--mylistbutton">+ Ma Liste</Link>
           </ButtonsContainer>
 
           <p className="featured--genres"><strong>Genres: </strong>{genres.join(', ')}</p>

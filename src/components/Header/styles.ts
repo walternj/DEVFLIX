@@ -16,7 +16,7 @@ export const Container = styled.header<{background: boolean}>`
   padding: 0 30px;
   transition: all ease 0.5s;
 
-  background: ${props => (props.background ? '#141414' : 'transparent')};
+  background: ${props => (props.background ? 'var(--color-header)' : 'transparent')};
 
   .header--logo {
     height: 35px;

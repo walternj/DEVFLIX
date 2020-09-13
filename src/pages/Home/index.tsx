@@ -23,8 +23,13 @@ const Home: React.FC = () => {
       let originals = list.filter(i => i.slug === 'originals')
       let randomChosen = Math.floor(Math.random() * originals[0].items.results.length - 1)
       let chosen = originals[0].items.results[randomChosen]
+
       let chosenInfo =  await TMDB.getMovieInfo(chosen.id, 'tv')
-      if (chosenInfo) {
+      if (chosen) {
+        setFeaturedData(chosenInfo)
+      } else {
+        let chosen = originals[0].items.results[randomChosen]
+        let chosenInfo =  await TMDB.getMovieInfo(chosen.id, 'tv')
         setFeaturedData(chosenInfo)
       }
     }

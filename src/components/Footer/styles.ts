@@ -38,7 +38,7 @@ export const Container = styled.footer`
 const iconCSS= css`
   width: 26px;
   height:auto;
-  fill: #DB202C;
+  fill: var(--color-red);
   flex-shrink: 0;
 `;
 

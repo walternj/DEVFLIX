@@ -59,10 +59,45 @@ export default {
         )
       },
       {
+        slug: 'science_fiction',
+        title: 'Science Fiction',
+        items: await basicFetch(
+          `/discover/movie?with_genres= 878&language=fr&api_key=${process.env.REACT_APP_API_KEY}`
+        )
+      },
+      {
         slug: 'action',
         title: 'Action',
         items: await basicFetch(
           `/discover/movie?with_genres=28&language=fr&api_key=${process.env.REACT_APP_API_KEY}`
+        )
+      },
+      {
+        slug: 'western',
+        title: 'Western',
+        items: await basicFetch(
+          `/discover/movie?with_genres= 37&language=fr&api_key=${process.env.REACT_APP_API_KEY}`
+        )
+      },
+      {
+        slug: 'drama',
+        title: 'Drame',
+        items: await basicFetch(
+          `/discover/movie?with_genres= 18&language=fr&api_key=${process.env.REACT_APP_API_KEY}`
+        )
+      },
+      {
+        slug: 'animation',
+        title: 'Animation',
+        items: await basicFetch(
+          `/discover/movie?with_genres= 16&language=fr&api_key=${process.env.REACT_APP_API_KEY}`
+        )
+      },
+      {
+        slug: 'fantasy',
+        title: 'Fantastique',
+        items: await basicFetch(
+          `/discover/movie?with_genres= 14&language=fr&api_key=${process.env.REACT_APP_API_KEY}`
         )
       },
       {
@@ -73,17 +108,17 @@ export default {
         )
       },
       {
-        slug: 'horror',
-        title: 'Horreur',
+        slug: 'adventure',
+        title: 'Aventure',
         items: await basicFetch(
-          `/discover/movie?with_genres=27&language=fr&api_key=${process.env.REACT_APP_API_KEY}`
+          `/discover/movie?with_genres=12&language=fr&api_key=${process.env.REACT_APP_API_KEY}`
         )
       },
       {
-        slug: 'documentary',
-        title: 'Documentaire',
+        slug: 'crime',
+        title: 'Crime',
         items: await basicFetch(
-          `/discover/movie?with_genres=99&language=fr&api_key=${process.env.REACT_APP_API_KEY}`
+          `/discover/movie?with_genres=80&language=fr&include_adult=false&api_key=${process.env.REACT_APP_API_KEY}`
         )
       }
     ]

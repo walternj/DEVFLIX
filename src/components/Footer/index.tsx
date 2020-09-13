@@ -14,7 +14,7 @@ const Footer: React.FC = () => {
         <span>by WalterNJ</span>
         <a href="https://www.linkedin.com/in/walter-nunes-jr/"
         target="new" ><LinkedinIcon /></a>
-        <a href="https://github.com/walternj" target="new"><GithubIcon /></a>
+        <a href="https://github.com/walternj/DEVFLIX" target="new"><GithubIcon /></a>
         <a href="https://walternj-portifolio.netlify.app/" target="new"><SiteIcon /></a>
       </div>
     </Container>

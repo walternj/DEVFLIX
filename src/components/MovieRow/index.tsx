@@ -52,6 +52,7 @@ const MovieRow: React.FC<FilmData> = ({title, items}) => {
             marginLeft: scrollX,
             width: items.results.length * 150,
           }}
+
         >
           {items.results.length > 0 && items.results.map((item, key) => (
             <div key={key} className="movieRow--item" >
