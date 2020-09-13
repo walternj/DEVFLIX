@@ -12,4 +12,4 @@ Vous pouvez avoir un aperçu de son fonctionnement en accèdent à ce lien : htt
 
 ![DEVFLIX](https://github.com/walternj/DEVFLIX/blob/master/Capture.PNG)
 
-![DEVFLIX](https://github.com/walternj/DEVFLIX/blob/master/Capture_mobile.png | width=350 border-radius=4)
+![DEVFLIX](https://github.com/walternj/DEVFLIX/blob/master/Capture_mobile.png | width=350)
