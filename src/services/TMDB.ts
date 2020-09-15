@@ -131,11 +131,11 @@ export default {
       switch(type) {
 
         case 'movie':
-          info = await basicFetch(`/movie/${movieId}?language=fr&api_key=${process.env.REACT_APP_REACT_APP_API_KEY}`)
+          info = await basicFetch(`/movie/${movieId}?language=fr&api_key=${process.env.REACT_APP_REACT_APP_API_KEY}&append_to_response=videos`)
           return info;
 
         case 'tv':
-          return info = await basicFetch(`/tv/${movieId}?language=fr&api_key=${process.env.REACT_APP_API_KEY}`);
+          return info = await basicFetch(`/tv/${movieId}?language=fr&api_key=${process.env.REACT_APP_API_KEY}&append_to_response=videos`);
 
         default:
           info = {}
@@ -144,6 +144,7 @@ export default {
     }
 
   }
+
 };
 
 

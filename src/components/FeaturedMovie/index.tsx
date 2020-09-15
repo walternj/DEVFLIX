@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react'
+import React from 'react'
+
 import { Link } from 'react-router-dom'
 
 import { Container, ButtonsContainer } from './styles'
@@ -16,18 +17,13 @@ interface FeatureProps {
       id: number;
       name: string;
     }]
-  } | null | undefined;
+  } | null | undefined
 }
 
 const FeaturedMovie: React.FC<FeatureProps> = ({item}) => {
-
   let genres: string[] = []
   item?.genres.forEach(element => genres.push(element.name))
 
-  useEffect(() => {
-    console.log('featured: ',item)
-
-  },[item])
 
   let description = item?.overview
   if (description && description?.length > 200) {
@@ -53,7 +49,8 @@ const FeaturedMovie: React.FC<FeatureProps> = ({item}) => {
 
           <ButtonsContainer>
               {/* <a href={`/watch/${item?.id}`} className="featured--watchbutton">Regarder</a> */}
-              <Link to="/details" className="featured--watchbutton">Regarder</Link>
+              <Link to="/details"
+                className="featured--watchbutton">Regarder</Link>
               <Link to={`/list/add/${item?.id}`}className="featured--mylistbutton">+ Ma Liste</Link>
           </ButtonsContainer>
 

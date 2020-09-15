@@ -4,7 +4,6 @@ export const Container = styled.section`
   height: 100vh;
   background-size: 'cover';
   background-position: 'center';
-  background-position-x: center;
   background-attachment: fixed;
 
   .featured--vertical {
