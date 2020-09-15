@@ -31,7 +31,7 @@ const FilmDetails: React.FC = () => {
       }
     }
     url()
-  },[])
+  },[movie])
 
   return (
     <Container
