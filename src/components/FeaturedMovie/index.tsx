@@ -24,7 +24,6 @@ const FeaturedMovie: React.FC<FeatureProps> = ({item}) => {
   let genres: string[] = []
   item?.genres.forEach(element => genres.push(element.name))
 
-
   let description = item?.overview
   if (description && description?.length > 200) {
     description = description?.substring(0, 350)+'...'

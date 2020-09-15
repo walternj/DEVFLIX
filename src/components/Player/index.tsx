@@ -13,7 +13,6 @@ const Player: React.FC<PlayerProps> = ({url}) => {
       <ReactPlayer
         className='react-player'
         url={url}
-
         controls
       />
     </Container>

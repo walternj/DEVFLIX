@@ -19,6 +19,8 @@ import { Container, Content, PlayerContainer, TextContainer } from './styles';
 const FilmDetails: React.FC = () => {
   const movie = useSelector<MovieState , MovieState["featuredMovie"]>(state => state.featuredMovie)
   const [url, setUrl] = useState<string>()
+  let genres: string[] = []
+  movie?.genres.forEach(element => genres.push(element.name))
 
   useEffect(() =>{
     function url() {
@@ -49,10 +51,11 @@ const FilmDetails: React.FC = () => {
           <h1 className="featured--name">{movie?.original_name}</h1>
             <div className="featured--info">
               <p className="featured--points">{movie?.vote_average} points</p>
-              <p className="featured--year">{movie?.first_air_date.slice(0, 4 )}</p>
+              <p className="featured--year">{movie?.first_air_date.slice(0, 4)}</p>
               <p className="featured--seasons">{movie?.number_of_seasons} saison{movie?.number_of_seasons !== 1 ? 's': ''}</p>
             </div>
           <span className="featured--overview">{movie?.overview}</span>
+          <p className="featured--genres"><strong>Genres: </strong>{genres.join(', ')}</p>
         </TextContainer>
       </Content>
 
