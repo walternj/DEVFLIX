@@ -6,6 +6,7 @@ export const Container = styled.footer`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-height: 70px;
 
   .footer--left-container {
     > p {

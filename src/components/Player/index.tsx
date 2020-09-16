@@ -14,6 +14,8 @@ const Player: React.FC<PlayerProps> = ({url}) => {
         className='react-player'
         url={url}
         controls
+        width="100%"
+        height="100%"
       />
     </Container>
   );

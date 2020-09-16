@@ -1,4 +1,4 @@
-export const SET_FEATURED = 'SET_FEATURED'
+import {SET_FEATURED} from '../../actions/index'
 
 export interface MovieState {
   featuredMovie?: {

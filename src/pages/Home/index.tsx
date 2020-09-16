@@ -1,14 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 
-import TMDB from '../../services/TMDB';
+import MovieRow from '../../components/MovieRow'
+import FeaturedMovie from '../../components/FeaturedMovie'
 
-import MovieRow from '../../components/MovieRow';
-import FeaturedMovie from '../../components/FeaturedMovie';
+import TMDB from '../../services/TMDB'
+import {FilmData} from '../../services/TMDB'
 
-import {FilmData} from '../../services/TMDB';
-
-import { Container, List, Loading } from './styles';
+import { Container, List, Loading } from './styles'
 
 const Home: React.FC = () => {
   const dispatch = useDispatch()
@@ -28,15 +27,15 @@ const Home: React.FC = () => {
       let chosen = originals[0].items.results[randomChosen]
 
       let chosenInfo =  await TMDB.getMovieInfo(chosen.id, 'tv')
+
       setFeaturedData(chosenInfo)
       console.log('CHOSEN :', chosenInfo)
+
       dispatch({type: 'SET_FEATURED', value: chosenInfo})
     }
 
     loadAll()
   },[dispatch])
-
-
 
   return (
     <Container>
@@ -54,6 +53,7 @@ const Home: React.FC = () => {
          ))
        }
       </List>
+
       {!featuredData &&
         <Loading>
           <img src="https://cdn.lowgif.com/full/0534e2a412eeb281-the-counterintuitive-tech-behind-netflix-s-worldwide.gif" alt="Loading"/>

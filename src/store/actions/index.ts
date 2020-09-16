@@ -1,0 +1,1 @@
+export const SET_FEATURED = 'SET_FEATURED'

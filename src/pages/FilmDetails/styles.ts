@@ -4,9 +4,9 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
+  height: fit-content;
   background-size: 'cover';
-  background-position: 'center';
   background-position-x: center;
 
   background-attachment: fixed;
@@ -19,17 +19,20 @@ export const Content = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 70px 30px 30px 30px;
-
+  padding: 70px 5px 15px 5px;
   width:100vw;
-  height: inherit;
-  min-height: fit-content;
+  height: fit-content;
+  min-height: inherit;
 
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 30%, transparent 90% );
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 30%, transparent 95% );
 `;
 
 export const PlayerContainer = styled.div`
-  max-width: 1200px;
+  display:flex;
+  max-width: 900px;
+  width: 100%;
+  height: 56.25vw;
+  max-height: 506.25px;
   -webkit-box-shadow: -1px 7px 33px -3px rgba(235,23,23,1);
   -moz-box-shadow: -1px 7px 33px -3px rgba(235,23,23,1);
   box-shadow: -1px 7px 33px -3px rgba(235,23,23,1);
@@ -41,7 +44,7 @@ export const TextContainer = styled.div`
   .featured--name {
     font-size: 60px;
     font-weight: bold;
-    margin-top: 15px;
+    margin-top: 30px;
     text-shadow: 3px 0px 10px rgba(0, 0, 0, 1);
   }
 
