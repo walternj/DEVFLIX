@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { useHistory } from "react-router-dom";
 
 import { Container } from './styles';
 
 const Header: React.FC = () => {
   const [blackheader, setBlackHeader] = useState(false)
+  const history = useHistory()
 
   useEffect(() => {
     const scrollListener = () => {
@@ -22,7 +24,10 @@ const Header: React.FC = () => {
 
   return (
     <Container background={blackheader} >
-      <img className="header--logo" src="https://fontmeme.com/permalink/200908/6f4370d71e0e7511ca088679fad14e1c.png" alt="Netflix"/>
+      <img className="header--logo"
+        src="https://fontmeme.com/permalink/200908/6f4370d71e0e7511ca088679fad14e1c.png" alt="Netflix"
+        onClick={() => history.push("/")}
+      />
 
       <div className="header--user">
         <a href="/">

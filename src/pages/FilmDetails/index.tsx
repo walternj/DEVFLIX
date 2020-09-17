@@ -29,7 +29,7 @@ const FilmDetails: React.FC = () => {
         console.log('URL :', urlPlay)
       setUrl(urlPlay)
       } else {
-        setUrl('jYFk1O_t43A')
+        setUrl('GV3HUDMQ-F8&ab')
       }
     }
     url()

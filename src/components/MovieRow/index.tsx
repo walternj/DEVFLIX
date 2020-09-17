@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react'
+import { useDispatch } from 'react-redux'
 import { AiFillPlayCircle } from 'react-icons/ai'
 
 import { Container, ListContainer, NavLeftIcon, NavRightIcon, } from './styles';
@@ -6,6 +7,7 @@ import { Container, ListContainer, NavLeftIcon, NavRightIcon, } from './styles';
 import {FilmData} from '../../services/TMDB';
 
 const MovieRow: React.FC<FilmData> = ({title, items}) => {
+  const dispatch = useDispatch()
   const [scrollX, setScrollX] = useState(0)
 
   const handleLeftArrow = () => {
@@ -31,8 +33,9 @@ const MovieRow: React.FC<FilmData> = ({title, items}) => {
 
   }, [items])
 
-  const handleClick = () => {
-    alert('clicked')
+  const handleClick = (id: number) => {
+    dispatch({type: 'SET_FEATURED', value: id })
+    alert('id')
   }
 
   return (
@@ -65,7 +68,7 @@ const MovieRow: React.FC<FilmData> = ({title, items}) => {
               />
 
               <div className="movieRow--icon-container"
-                onClick={handleClick}
+                onClick={() => handleClick(item.id)}
               >
                 <AiFillPlayCircle />
               </div>

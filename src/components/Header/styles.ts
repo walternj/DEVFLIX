@@ -20,6 +20,7 @@ export const Container = styled.header<{background: boolean}>`
 
   .header--logo {
     height: 35px;
+    cursor: pointer;
   }
 
   .header--user {
