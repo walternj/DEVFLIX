@@ -10,6 +10,11 @@ export default createGlobalStyle`
     box-sizing: border-box;
   }
 
+  html {
+    overflow-x: hidden;
+
+  }
+
   body {
     min-height: 100%;
     background: #111;

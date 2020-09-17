@@ -19,7 +19,7 @@ export const Content = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 70px 5px 15px 5px;
+  padding: 70px 10px 15px 10px;
   width:100vw;
   height: fit-content;
   min-height: inherit;
@@ -39,12 +39,15 @@ export const PlayerContainer = styled.div`
 `;
 
 export const TextContainer = styled.div`
+  display: flex;
+  flex-direction: column;
   max-width: 1200px;
 
   .featured--name {
     font-size: 60px;
     font-weight: bold;
     margin-top: 30px;
+    margin-left: 10px;
     text-shadow: 3px 0px 10px rgba(0, 0, 0, 1);
   }
 
@@ -52,6 +55,7 @@ export const TextContainer = styled.div`
     font-size: 18px;
     font-weight: bold;
     margin-top: 15px;
+    margin-left: 10px;
     text-shadow: 3px 0px 10px rgba(0, 0, 0, 1);
 
     .featured--points,
@@ -59,6 +63,7 @@ export const TextContainer = styled.div`
     .featured--seasons {
       display: inline-block;
       margin-right: 15px;
+
     }
 
     .featured--points {
@@ -82,6 +87,7 @@ export const TextContainer = styled.div`
 
   .featured--overview {
     margin-top: 15px;
+    margin-left: 10px;
     font-size: 20px;
     color: var(--color-white);
     text-shadow: 3px 0px 10px rgba(0, 0, 0, 1);
@@ -91,7 +97,7 @@ export const TextContainer = styled.div`
     text-overflow: ellipsis;
 
     @media (max-width:768PX) {
-      margin-right: 30px;
+      margin-right: 10px;
       font-size: 16px;
       max-width: 100%;
     }
@@ -99,6 +105,7 @@ export const TextContainer = styled.div`
 
   .featured--genres {
     margin-top: 15px;
+    margin-left: 10px;
     font-size: 18px;
     color: var(--color-red);
     text-shadow: 3px 0px 10px rgba(0, 0, 0, 1);

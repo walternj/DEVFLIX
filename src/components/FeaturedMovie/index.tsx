@@ -22,6 +22,7 @@ interface FeatureProps {
 
 const FeaturedMovie: React.FC<FeatureProps> = ({item}) => {
   let genres: string[] = []
+
   item?.genres.forEach(element => genres.push(element.name))
 
   let description = item?.overview
@@ -47,10 +48,10 @@ const FeaturedMovie: React.FC<FeatureProps> = ({item}) => {
           <span className="featured--overview">{description}</span>
 
           <ButtonsContainer>
-              {/* <a href={`/watch/${item?.id}`} className="featured--watchbutton">Regarder</a> */}
-              <Link to="/details"
-                className="featured--watchbutton">Regarder</Link>
-              <Link to={`/list/add/${item?.id}`}className="featured--mylistbutton">+ Ma Liste</Link>
+            {/* <a href={`/watch/${item?.id}`} className="featured--watchbutton">Regarder</a> */}
+            <Link to="/details"
+              className="featured--watchbutton">Regarder</Link>
+            <Link to={`/list/add/${item?.id}`}className="featured--mylistbutton">+ Ma Liste</Link>
           </ButtonsContainer>
 
           <p className="featured--genres"><strong>Genres: </strong>{genres.join(', ')}</p>

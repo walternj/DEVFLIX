@@ -63,20 +63,57 @@ export const ListContainer = styled.div`
 
   .movieRow--list {
     transition: all ease 0.5s;
+    height: 225px;
+    overflow: hidden;
 
     .movieRow--item {
+      position: relative;
       display: inline-block;
       width: 150px;
       cursor: pointer;
 
+
       > img {
         width: 100%;
+        height: 225px;
         transform: scale(0.9);
         transition: all ease 0.2s;
       }
-      >img:hover {
-        transform: scale(1)
+
+      .movieRow--icon-container {
+        position: absolute;
+        text-align: center;
+        justify-content: center;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        z-index: -1;
+        overflow:hidden;
+        background: transparent;
+        transform: scale(0.9);
+        transition: all ease 0.2s;
+
+        > svg {
+          font-size: 60px;
+          margin-top: 82.5px;
+          fill: var(--color-primary);
+          opacity: 0.9;
+        }
       }
+
+
+      &:hover {
+        >img {
+          transform: scale(1)
+        }
+
+        .movieRow--icon-container {
+          transform: scale(1);
+          z-index: 3;
+        }
+      }
+
     }
   }
 `;

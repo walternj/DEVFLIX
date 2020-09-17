@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-
+import { AiFillPlayCircle } from 'react-icons/ai'
 
 import { Container, ListContainer, NavLeftIcon, NavRightIcon, } from './styles';
 
@@ -31,6 +31,10 @@ const MovieRow: React.FC<FilmData> = ({title, items}) => {
 
   }, [items])
 
+  const handleClick = () => {
+    alert('clicked')
+  }
+
   return (
     <Container>
       <h2>{title}</h2>
@@ -52,11 +56,19 @@ const MovieRow: React.FC<FilmData> = ({title, items}) => {
             marginLeft: scrollX,
             width: items.results.length * 150,
           }}
-
         >
           {items.results.length > 0 && items.results.map((item, key) => (
-            <div key={key} className="movieRow--item" >
-              <img  src={`https://image.tmdb.org/t/p/w300/${item.poster_path}`} alt={item.original_title}/>
+            <div key={key} className="movieRow--item">
+              <img
+                src={`https://image.tmdb.org/t/p/w300/${item.poster_path}`}
+                alt={item.original_title}
+              />
+
+              <div className="movieRow--icon-container"
+                onClick={handleClick}
+              >
+                <AiFillPlayCircle />
+              </div>
             </div>
           ))}
         </div>
