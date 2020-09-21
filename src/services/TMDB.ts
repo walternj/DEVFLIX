@@ -23,6 +23,9 @@ export interface FilmData {
     original_title: string
   }]}
 }
+
+  const lang = navigator.language || 'en'
+
   const basicFetch = async (endpoint: string) => {
     try {
       const req = await fetch(`${process.env.REACT_APP_API_BASE}${endpoint}`)
@@ -41,84 +44,84 @@ export default {
         slug: 'originals',
         title: 'Originaux de NetFlix',
         items: await basicFetch(
-          `/discover/tv?with_network=213&append_to_response=media_type&language=fr&api_key=${process.env.REACT_APP_API_KEY}`,
+          `/discover/tv?with_network=213&append_to_response=media_type&language=${lang}&api_key=${process.env.REACT_APP_API_KEY}`,
         )
       },
       {
         slug: 'trending',
         title: 'Recommandations',
         items: await basicFetch(
-          `/trending/all/week?&language=fr&append_to_response=media_type&api_key=${process.env.REACT_APP_API_KEY}`
+          `/trending/all/week?&language=${lang}&append_to_response=media_type&api_key=${process.env.REACT_APP_API_KEY}`
         )
       },
       {
         slug: 'toprated',
         title: 'Les mieux notés',
         items: await basicFetch(
-          `/movie/top_rated?&language=fr&api_key=${process.env.REACT_APP_API_KEY}`
+          `/movie/top_rated?&language=${lang}&api_key=${process.env.REACT_APP_API_KEY}`
         )
       },
       {
         slug: 'science_fiction',
         title: 'Science Fiction',
         items: await basicFetch(
-          `/discover/movie?with_genres= 878&language=fr&api_key=${process.env.REACT_APP_API_KEY}`
+          `/discover/movie?with_genres= 878&language=${lang}&api_key=${process.env.REACT_APP_API_KEY}`
         )
       },
       {
         slug: 'action',
         title: 'Action',
         items: await basicFetch(
-          `/discover/movie?with_genres=28&language=fr&api_key=${process.env.REACT_APP_API_KEY}`
+          `/discover/movie?with_genres=28&language=${lang}&api_key=${process.env.REACT_APP_API_KEY}`
         )
       },
       {
         slug: 'western',
         title: 'Western',
         items: await basicFetch(
-          `/discover/movie?with_genres= 37&language=fr&api_key=${process.env.REACT_APP_API_KEY}`
+          `/discover/movie?with_genres= 37&language=${lang}&api_key=${process.env.REACT_APP_API_KEY}`
         )
       },
       {
         slug: 'drama',
         title: 'Drame',
         items: await basicFetch(
-          `/discover/movie?with_genres= 18&language=fr&api_key=${process.env.REACT_APP_API_KEY}`
+          `/discover/movie?with_genres= 18&language=${lang}&api_key=${process.env.REACT_APP_API_KEY}`
         )
       },
       {
         slug: 'animation',
         title: 'Animation',
         items: await basicFetch(
-          `/discover/movie?with_genres= 16&language=fr&append_to_response=media_type&api_key=${process.env.REACT_APP_API_KEY}`
+          `/discover/movie?with_genres= 16&language=${lang}&append_to_response=media_type&api_key=${process.env.REACT_APP_API_KEY}`
         )
       },
       {
         slug: 'fantasy',
         title: 'Fantastique',
         items: await basicFetch(
-          `/discover/movie?with_genres= 14&language=fr&append_to_response=media_type&api_key=${process.env.REACT_APP_API_KEY}`
+          `/discover/movie?with_genres= 14&language=${lang}&append_to_response=media_type&api_key=${process.env.REACT_APP_API_KEY}`
         )
       },
       {
         slug: 'comedy',
         title: 'Comedie',
         items: await basicFetch(
-          `/discover/movie?with_genres=35&language=fr&append_to_response=media_type&api_key=${process.env.REACT_APP_API_KEY}`
+          `/discover/movie?with_genres=35&language=${lang}&append_to_response=media_type&api_key=${process.env.REACT_APP_API_KEY}`
         )
       },
       {
         slug: 'adventure',
         title: 'Aventure',
         items: await basicFetch(
-          `/discover/movie?with_genres=12&language=fr&append_to_response=media_type&api_key=${process.env.REACT_APP_API_KEY}`
+          `/discover/movie?with_genres=12&language=${lang}&append_to_response=media_type&api_key=${process.env.REACT_APP_API_KEY}`
         )
       },
       {
         slug: 'crime',
         title: 'Crime',
         items: await basicFetch(
-          `/discover/movie?with_genres=80&language=fr&include_adult=false&append_to_response=media_type&api_key=${process.env.REACT_APP_API_KEY}`
+          `/discover/movie?with_genres=80&language=${lang}&include_adult=false&append_to_response=media_type&api_key=${process.env.REACT_APP_API_KEY}`
         )
       }
     ]
@@ -131,11 +134,11 @@ export default {
       switch(type) {
 
         case 'movie':
-          info = await basicFetch(`/movie/${movieId}?language=fr&api_key=${process.env.REACT_APP_REACT_APP_API_KEY}&append_to_response=videos`)
+          info = await basicFetch(`/movie/${movieId}?language=${lang}&api_key=${process.env.REACT_APP_REACT_APP_API_KEY}&append_to_response=videos`)
           return info;
 
         case 'tv':
-          return info = await basicFetch(`/tv/${movieId}?language=fr&api_key=${process.env.REACT_APP_API_KEY}&append_to_response=videos`);
+          return info = await basicFetch(`/tv/${movieId}?language=${lang}&api_key=${process.env.REACT_APP_API_KEY}&append_to_response=videos`);
 
         default:
           info = {}

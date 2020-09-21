@@ -23,18 +23,25 @@ const Home: React.FC = () => {
 
       //get featured item
       let originals = list.filter(i => i.slug === 'originals')
-      let randomChosen = Math.floor(Math.random() * originals[0].items.results.length - 1)
-      let chosen = originals[0].items.results[randomChosen]
+
+      let randomChosen = undefined
+      let chosen = undefined
+
+      while(chosen === undefined || null) {
+        randomChosen = Math.floor(Math.random() * originals[0].items.results.length - 1)
+        chosen = originals[0].items.results[randomChosen]
+      }
 
       let chosenInfo =  await TMDB.getMovieInfo(chosen.id, 'tv')
-
       setFeaturedData(chosenInfo)
       console.log('CHOSEN :', chosenInfo)
 
       dispatch({type: 'SET_FEATURED', value: chosenInfo})
-    }
 
-    loadAll()
+
+    }
+      loadAll()
+
   },[dispatch])
 
   return (

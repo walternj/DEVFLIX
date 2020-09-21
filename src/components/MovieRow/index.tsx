@@ -34,8 +34,8 @@ const MovieRow: React.FC<FilmData> = ({title, items}) => {
   }, [items])
 
   const handleClick = (id: number) => {
-    dispatch({type: 'SET_FEATURED', value: id })
-    alert('id')
+    dispatch({type: 'SET_FEATURED', value: id } )
+    alert(id)
   }
 
   return (
