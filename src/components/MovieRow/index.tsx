@@ -7,7 +7,7 @@ import { Container, ListContainer, NavLeftIcon, NavRightIcon, } from './styles';
 
 import TMDB, {FilmData} from '../../services/TMDB';
 
-const MovieRow: React.FC<FilmData> = ({title, items}) => {
+const MovieRow: React.FC<FilmData> = ({title, items, media}) => {
   const dispatch = useDispatch()
   const history = useHistory();
   const [scrollX, setScrollX] = useState(0)
@@ -35,8 +35,10 @@ const MovieRow: React.FC<FilmData> = ({title, items}) => {
 
   }, [items])
 
-  const handleClick = async(id: number, type='movie') => {
-    let chosenInfo =  await TMDB.getMovieInfo(id, type)
+  const handleClick = async(id: number, media_type: string) => {
+    let chosenMedia= media_type ? media_type : media
+    console.log('MEDIA_TYPE :', chosenMedia)
+    let chosenInfo =  await TMDB.getMovieInfo(id, chosenMedia)
 
     console.log('CHOSEN_ITEM :', chosenInfo)
 

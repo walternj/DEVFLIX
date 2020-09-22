@@ -55,6 +55,7 @@ const Home: React.FC = () => {
            <MovieRow key={key}
               title={item.title}
               items={item.items}
+              media={item.media}
            />
          ))
        }

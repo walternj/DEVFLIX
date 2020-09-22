@@ -13,6 +13,7 @@
 export interface FilmData {
   slug?: string,
   title: string,
+  media: string,
   items: {
     results:[{
       id: number;
@@ -59,6 +60,7 @@ export default {
       {
         slug: 'originals',
         title: 'Originaux de NetFlix',
+        media: 'tv',
         items: await basicFetch(
           `/discover/tv?with_network=213&append_to_response=media_type&language=${lang}&api_key=${process.env.REACT_APP_API_KEY}`,
         )
@@ -66,6 +68,7 @@ export default {
       {
         slug: 'trending',
         title: 'Recommandations',
+        media: 'all',
         items: await basicFetch(
           `/trending/all/week?&language=${lang}&append_to_response=media_type&api_key=${process.env.REACT_APP_API_KEY}`
         )
@@ -73,6 +76,7 @@ export default {
       {
         slug: 'toprated',
         title: 'Les mieux notés',
+        media: 'movie',
         items: await basicFetch(
           `/movie/top_rated?&language=${lang}&api_key=${process.env.REACT_APP_API_KEY}`
         )
@@ -80,6 +84,7 @@ export default {
       {
         slug: 'science_fiction',
         title: 'Science Fiction',
+        media: 'movie',
         items: await basicFetch(
           `/discover/movie?with_genres= 878&language=${lang}&api_key=${process.env.REACT_APP_API_KEY}`
         )
@@ -87,6 +92,7 @@ export default {
       {
         slug: 'action',
         title: 'Action',
+        media: 'movie',
         items: await basicFetch(
           `/discover/movie?with_genres=28&language=${lang}&api_key=${process.env.REACT_APP_API_KEY}`
         )
@@ -94,6 +100,7 @@ export default {
       {
         slug: 'western',
         title: 'Western',
+        media: 'movie',
         items: await basicFetch(
           `/discover/movie?with_genres= 37&language=${lang}&api_key=${process.env.REACT_APP_API_KEY}`
         )
@@ -101,6 +108,7 @@ export default {
       {
         slug: 'drama',
         title: 'Drame',
+        media: 'movie',
         items: await basicFetch(
           `/discover/movie?with_genres= 18&language=${lang}&api_key=${process.env.REACT_APP_API_KEY}`
         )
@@ -108,6 +116,7 @@ export default {
       {
         slug: 'animation',
         title: 'Animation',
+        media: 'movie',
         items: await basicFetch(
           `/discover/movie?with_genres= 16&language=${lang}&append_to_response=media_type&api_key=${process.env.REACT_APP_API_KEY}`
         )
@@ -115,6 +124,7 @@ export default {
       {
         slug: 'fantasy',
         title: 'Fantastique',
+        media: 'movie',
         items: await basicFetch(
           `/discover/movie?with_genres= 14&language=${lang}&append_to_response=media_type&api_key=${process.env.REACT_APP_API_KEY}`
         )
@@ -122,6 +132,7 @@ export default {
       {
         slug: 'comedy',
         title: 'Comedie',
+        media: 'movie',
         items: await basicFetch(
           `/discover/movie?with_genres=35&language=${lang}&append_to_response=media_type&api_key=${process.env.REACT_APP_API_KEY}`
         )
@@ -129,6 +140,7 @@ export default {
       {
         slug: 'adventure',
         title: 'Aventure',
+        media: 'movie',
         items: await basicFetch(
           `/discover/movie?with_genres=12&language=${lang}&append_to_response=media_type&api_key=${process.env.REACT_APP_API_KEY}`
         )
@@ -136,6 +148,7 @@ export default {
       {
         slug: 'crime',
         title: 'Crime',
+        media: 'movie',
         items: await basicFetch(
           `/discover/movie?with_genres=80&language=${lang}&include_adult=false&append_to_response=media_type&api_key=${process.env.REACT_APP_API_KEY}`
         )
@@ -150,11 +163,11 @@ export default {
       switch(type) {
 
         case 'movie':
-          info = await basicFetch(`/movie/${movieId}?language=${language}&api_key=${process.env.REACT_APP_API_KEY}&append_to_response=videos`)
+          info = await basicFetch(`/movie/${movieId}?language=${language}&api_key=${process.env.REACT_APP_API_KEY}&append_to_response=videos, media_type`)
           return info;
 
         case 'tv':
-          return info = await basicFetch(`/tv/${movieId}?language=${language}&api_key=${process.env.REACT_APP_API_KEY}&append_to_response=videos`);
+          return info = await basicFetch(`/tv/${movieId}?language=${language}&api_key=${process.env.REACT_APP_API_KEY}&append_to_response=videos, media_type`);
 
         default:
           info = {}
