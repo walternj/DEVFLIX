@@ -1,4 +1,5 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import {AiFillStar} from 'react-icons/ai'
 
 export const Container = styled.div`
   display: flex;
@@ -52,8 +53,12 @@ export const TextContainer = styled.div`
   }
 
   .featured--info {
+
     font-size: 18px;
     font-weight: bold;
+    height: 18px;
+    line-height: 16px;
+    padding: 0;
     margin-top: 15px;
     margin-left: 10px;
     text-shadow: 3px 0px 10px rgba(0, 0, 0, 1);
@@ -91,7 +96,7 @@ export const TextContainer = styled.div`
     font-size: 20px;
     color: var(--color-white);
     text-shadow: 3px 0px 10px rgba(0, 0, 0, 1);
-    max-width: 50%;
+    max-width: 100%;
     max-height: 51%;
     overflow-y: hidden;
     text-overflow: ellipsis;
@@ -106,8 +111,21 @@ export const TextContainer = styled.div`
   .featured--genres {
     margin-top: 15px;
     margin-left: 10px;
-    font-size: 18px;
+    font-size: 20px;
+    font-weight: 600;
     color: var(--color-red);
     text-shadow: 3px 0px 10px rgba(0, 0, 0, 1);
   }
+`;
+
+const iconCSS= css`
+
+  font-size: 18px;
+  fill: var(--color-green-text);
+  padding: 0;
+  margin: 0;
+`;
+
+export const StarIcon = styled(AiFillStar)`
+  ${iconCSS}
 `;

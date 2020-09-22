@@ -2,19 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux'
 
 import { MovieState } from '../../store/reducers/types';
+import TMDB from '../../services/TMDB';
 
 import Player from '../../components/Player'
-import { Container, Content, PlayerContainer, TextContainer } from './styles';
+import { Container, Content, PlayerContainer, TextContainer, StarIcon } from './styles';
 
-// const movie_test = {
-//   id: 456,
-//   backdrop_path: "/adZ9ldSlkGfLfsHNbh37ZThCcgU.jpg",
-//   original_name: "The Simpsons",
-//   vote_average: 7.6,
-//   number_of_seasons: 22,
-//   overview: "Les Simpson, famille américaine moyenne, vivent à Springfield. Homer, le père, a deux passions : regarder la télé et boire des bières. Mais son quotidien est rarement reposant, entre son fils Bart qui fait toutes les bêtises possibles, sa fille Lisa qui est une surdouée, ou encore sa femme Marge qui ne supporte pas de le voir se soûler à longueur de journée.",
-//   first_air_date: "1989-12-16"
-// }
 
 const FilmDetails: React.FC = () => {
   const movie = useSelector<MovieState , MovieState["featuredMovie"]>(state => state.featuredMovie)
@@ -23,15 +15,26 @@ const FilmDetails: React.FC = () => {
   movie?.genres.forEach(element => genres.push(element.name))
 
   useEffect(() =>{
-    function url() {
+    async function url() {
       if (movie?.videos?.results[0]) {
         let urlPlay = movie?.videos?.results[0].key
-        console.log('URL :', urlPlay)
-      setUrl(urlPlay)
+          console.log('KEY :', urlPlay)
+        setUrl(urlPlay)
+
       } else {
-        setUrl('GV3HUDMQ-F8&ab')
+        let englishVideoCode = await TMDB.getMovieInfo(movie.id, 'tv', 'en')
+
+          if(englishVideoCode?.videos?.results[0]) {
+            let key = englishVideoCode?.videos?.results[0].key
+            setUrl(key)
+            console.log('ENGLISH KEY :', key)
+          } else {
+            setUrl('GV3HUDMQ-F8&ab')
+            console.log('ENGLISH KEY : undefined')
+          }
+        }
       }
-    }
+
     url()
   },[movie])
 
@@ -44,18 +47,32 @@ const FilmDetails: React.FC = () => {
       <Content>
         <PlayerContainer>
           <Player url={`https://www.youtube.com/watch?v=${url}`} />
-
         </PlayerContainer>
 
         <TextContainer>
-          <h1 className="featured--name">{movie?.original_name}</h1>
-            <div className="featured--info">
-              <p className="featured--points">{movie?.vote_average} points</p>
-              <p className="featured--year">{movie?.first_air_date.slice(0, 4)}</p>
+          {
+            movie.name ?
+              <h1 className="featured--name">{movie?.name}</h1>
+            :
+            <h1 className="featured--name">{movie?.title}</h1>
+          }
+          <div className="featured--info">
+            <p className="featured--points">{movie?.vote_average} <StarIcon /> </p>
+            {
+              movie?.first_air_date ?
+                <p className="featured--year">{movie?.first_air_date.slice(0, 4)}</p>
+              :
+                <p className="featured--year">{movie?.release_date.slice(0, 4)}</p>
+            }
+            {
+              movie?.number_of_seasons ?
               <p className="featured--seasons">{movie?.number_of_seasons} saison{movie?.number_of_seasons !== 1 ? 's': ''}</p>
-            </div>
+              :
+              <p className="featured--seasons">Cinema</p>
+            }
+          </div>
           <span className="featured--overview">{movie?.overview}</span>
-          <p className="featured--genres"><strong>Genres: </strong>{genres.join(', ')}</p>
+          <p className="featured--genres">{genres.join(', ')}</p>
         </TextContainer>
       </Content>
 

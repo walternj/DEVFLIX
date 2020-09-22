@@ -38,7 +38,6 @@ const Home: React.FC = () => {
 
       dispatch({type: 'SET_FEATURED', value: chosenInfo})
 
-
     }
       loadAll()
 

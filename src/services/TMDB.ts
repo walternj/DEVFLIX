@@ -15,12 +15,28 @@ export interface FilmData {
   title: string,
   items: {
     results:[{
-    id: number,
-    name: string,
-    backdrop_path: string,
-    poster_path: string,
-    overview: string,
-    original_title: string
+      id: number;
+      backdrop_path: string;
+      poster_path: string;
+      name?: string;
+      original_name?: string;
+      title?: string;
+      original_title?: string;
+      vote_average: number;
+      number_of_seasons: number;
+      overview: string;
+      first_air_date?: string;
+      release_date?: string;
+      media_type?: string;
+      genres: [{
+        id: number;
+        name: string;
+      }],
+      videos?:{
+          results:[{
+          key: string
+        }]
+      }
   }]}
 }
 
@@ -127,18 +143,18 @@ export default {
     ]
   },
 
-  getMovieInfo: async(movieId: number, type: string) =>  {
+  getMovieInfo: async(movieId: number, type: string, language=lang) =>  {
     let info = {}
     if (movieId) {
 
       switch(type) {
 
         case 'movie':
-          info = await basicFetch(`/movie/${movieId}?language=${lang}&api_key=${process.env.REACT_APP_REACT_APP_API_KEY}&append_to_response=videos`)
+          info = await basicFetch(`/movie/${movieId}?language=${language}&api_key=${process.env.REACT_APP_API_KEY}&append_to_response=videos`)
           return info;
 
         case 'tv':
-          return info = await basicFetch(`/tv/${movieId}?language=${lang}&api_key=${process.env.REACT_APP_API_KEY}&append_to_response=videos`);
+          return info = await basicFetch(`/tv/${movieId}?language=${language}&api_key=${process.env.REACT_APP_API_KEY}&append_to_response=videos`);
 
         default:
           info = {}

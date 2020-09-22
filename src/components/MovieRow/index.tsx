@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
+import { useHistory } from 'react-router-dom'
 import { AiFillPlayCircle } from 'react-icons/ai'
 
 import { Container, ListContainer, NavLeftIcon, NavRightIcon, } from './styles';
 
-import {FilmData} from '../../services/TMDB';
+import TMDB, {FilmData} from '../../services/TMDB';
 
 const MovieRow: React.FC<FilmData> = ({title, items}) => {
   const dispatch = useDispatch()
+  const history = useHistory();
   const [scrollX, setScrollX] = useState(0)
 
   const handleLeftArrow = () => {
@@ -33,9 +35,14 @@ const MovieRow: React.FC<FilmData> = ({title, items}) => {
 
   }, [items])
 
-  const handleClick = (id: number) => {
-    dispatch({type: 'SET_FEATURED', value: id } )
-    alert(id)
+  const handleClick = async(id: number, type='movie') => {
+    let chosenInfo =  await TMDB.getMovieInfo(id, type)
+
+    console.log('CHOSEN_ITEM :', chosenInfo)
+
+    dispatch({type: 'SET_FEATURED', value: chosenInfo})
+
+    history.push('/Details')
   }
 
   return (
@@ -68,7 +75,7 @@ const MovieRow: React.FC<FilmData> = ({title, items}) => {
               />
 
               <div className="movieRow--icon-container"
-                onClick={() => handleClick(item.id)}
+                onClick={() => handleClick(item.id, item?.media_type)}
               >
                 <AiFillPlayCircle />
               </div>

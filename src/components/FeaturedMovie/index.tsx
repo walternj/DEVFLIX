@@ -9,10 +9,13 @@ interface FeatureProps {
     id: string;
     backdrop_path: string;
     original_name: string;
+    name: string;
     vote_average: number;
     number_of_seasons: number;
     overview: string;
-    first_air_date: string;
+    first_air_date?: string;
+    release_date?: string;
+    media_type?: string;
     genres: [{
       id: number;
       name: string;
@@ -38,7 +41,7 @@ const FeaturedMovie: React.FC<FeatureProps> = ({item}) => {
     >
       <div className="featured--vertical">
         <div className="featured--horizontal">
-          <h1 className="featured--name">{item?.original_name}</h1>
+          <h1 className="featured--name">{item?.name}</h1>
           <div className="featured--info">
             <p className="featured--points">{item?.vote_average} points</p>
             <p className="featured--year">{item?.first_air_date.slice(0, 4 )}</p>
