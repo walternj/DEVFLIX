@@ -44,8 +44,10 @@ const Header: React.FC = () => {
       <SearchForm onSubmit={handleSubmit}>
         <input
           id="searchInput"
+
           placeholder=""
           value={search}
+          autoComplete="off"
           onChange={e => setSearch(e.currentTarget.value)}
         />
         <SearchIcon />

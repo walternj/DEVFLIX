@@ -2,17 +2,28 @@ import styled, { css } from 'styled-components';
 import {AiFillStar} from 'react-icons/ai'
 
 export const Container = styled.div`
+
   display: flex;
   flex-direction: column;
-  width: 100%;
-  min-height: 100vh;
-  height: fit-content;
-  background-size: 'cover';
-  background-position-x: center;
-
-  background-attachment: fixed;
   align-items: center;
   justify-content: center;
+
+  width: 100vw;
+  min-height: 100vh;
+
+  overflow-x: visible;
+  background-size: 'cover';
+  background-attachment: fixed;
+
+`;
+
+export const BackImg = styled.img`
+  display: block;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-position-x: center;
+  z-index: -1;
 `;
 
 export const Content = styled.div`

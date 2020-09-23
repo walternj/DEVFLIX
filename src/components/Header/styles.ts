@@ -75,7 +75,7 @@ export const SearchForm = styled.form`
     outline: 0;
     border-radius: 4px;
     cursor: pointer;
-    transition: width 0.3s ease-out,  background 0.6s ease-out;
+    transition: width 0.3s ease-in-out,  border 0.6s ease-in-out;
 
     &:focus {
       width: 100%;

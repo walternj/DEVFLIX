@@ -5,8 +5,7 @@ import { MovieState } from '../../store/reducers/types';
 import TMDB from '../../services/TMDB';
 
 import Player from '../../components/Player'
-import { Container, Content, PlayerContainer, TextContainer, StarIcon } from './styles';
-
+import { Container, Content, BackImg, PlayerContainer, TextContainer, StarIcon } from './styles';
 
 const FilmDetails: React.FC = () => {
   const movie = useSelector<MovieState , MovieState["featuredMovie"]>(state => state.featuredMovie)
@@ -39,11 +38,12 @@ const FilmDetails: React.FC = () => {
   },[movie])
 
   return (
-    <Container
-    style={{
-      backgroundImage: `url(https://image.tmdb.org/t/p/original${movie?.backdrop_path})`
-    }}
-    >
+    <Container>
+      <BackImg
+        style={{
+          backgroundImage: `url(https://image.tmdb.org/t/p/original${movie?.backdrop_path})`
+          }}
+      />
       <Content>
         <PlayerContainer>
           <Player url={`https://www.youtube.com/watch?v=${url}`} />

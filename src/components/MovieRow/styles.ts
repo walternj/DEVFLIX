@@ -2,7 +2,8 @@ import styled, { css } from 'styled-components';
 import {MdNavigateBefore, MdNavigateNext} from 'react-icons/md'
 
 export const Container = styled.div`
-  margin-bottom: 30px;
+  padding-bottom: 30px;
+  padding-left: 30px;
 
   > h2 {
     margin: 0 0 0 30px;
@@ -26,8 +27,6 @@ export const NavRightIcon = styled(MdNavigateNext)`
 
 export const ListContainer = styled.div`
   overflow-x: hidden;
-  padding-left: 30px;
-
   .moviewRow--left,
   .movieRow--right {
     position: absolute;

@@ -2,11 +2,14 @@ import styled, { css } from 'styled-components';
 import {IoMdBrowsers, IoLogoLinkedin, IoLogoGithub } from 'react-icons/io'
 
 export const Container = styled.footer`
-  margin: 30px 15px;
+  margin: 0;
+  padding: 0 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-height: 70px;
+  height: 70px;
+  background: var(--color-background);
+
 
   .footer--left-container {
     > p {

@@ -9,7 +9,6 @@ export const Container= styled.section<{ImgUrl: string}>`
   background-size: 'cover';
   /* background: ${props => `url(${props.ImgUrl})`}; */
   background-position: 'center';
-  background-attachment: fixed;
 
   .featured--vertical {
     z-index: 4;
@@ -94,13 +93,17 @@ export const Container= styled.section<{ImgUrl: string}>`
   }
 `;
 
-export const BackImg = styled.image`
-  position: absolute;
-  height: 100vh;
+export const BackImg = styled.img`
+  display: block;
+  position: fixed;
+  overflow-x: visible;
   width: 100vw;
+  height: 100%;
+  background-position-x: center;
+  z-index: -1;
 `;
 
-export const ButtonsContainer =  styled.div`
+export const ButtonsContainer = styled.div`
   display: flex;
   justify-content: space-between;
   margin-top: 15px;

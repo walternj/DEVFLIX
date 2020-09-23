@@ -30,9 +30,7 @@ export default createGlobalStyle`
 
   ::-webkit-scrollbar-thumb {
     background: var(--color-red);
-    border-color: var(--color-green-text);
-    border-width: 1px;
-    border-radius: 4px;
+
   }
 
   ::-webkit-scrollbar-track {
@@ -41,8 +39,7 @@ export default createGlobalStyle`
 
   ::-webkit-scrollbar-track-piece {
     background: transparent none;
-    width: 2px;
-    border: solid 1px var(--color-green-text);
+
   }
 
   *, bottom, input {

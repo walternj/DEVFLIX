@@ -6,6 +6,8 @@ export const Container = styled.div`
 
 export const List = styled.div`
   margin-top: -150px;
+  background: linear-gradient(to top, var(--color-background) 95%, transparent 0 );
+
 `;
 
 export const Loading = styled.div`
