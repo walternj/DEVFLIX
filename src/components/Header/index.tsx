@@ -9,6 +9,11 @@ const Header: React.FC = () => {
   const history = useHistory()
 
   useEffect(() => {
+    const input = document.getElementById('searchInput')
+    input.addEventListener("focus", function () {
+      setBlackHeader(true)
+    });
+
     const scrollListener = () => {
       if(window.scrollY > 10) {
         setBlackHeader(true)
@@ -33,11 +38,12 @@ const Header: React.FC = () => {
       <img className="header--logo"
         src="https://fontmeme.com/permalink/200908/6f4370d71e0e7511ca088679fad14e1c.png" alt="Netflix"
         onClick={() => history.push("/")}
-      />
+    />
 
 
       <SearchForm onSubmit={handleSubmit}>
         <input
+          id="searchInput"
           placeholder=""
           value={search}
           onChange={e => setSearch(e.currentTarget.value)}

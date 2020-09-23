@@ -65,7 +65,6 @@ export const SearchForm = styled.form`
     margin-left: 5px;
   }
 
-
   input {
     position: relative;
     width: 26px;
@@ -81,7 +80,7 @@ export const SearchForm = styled.form`
     &:focus {
       width: 100%;
       border: 1.2px var(--color-red) solid;
-      background: rgba(0 ,0, 0, 0.3)
+
     }
 
     @media (max-width:768PX) {
@@ -100,6 +99,7 @@ export const SearchForm = styled.form`
 
     @media (max-width:400PX) {
       height: 28px;
+    }
   }
 `;
 
