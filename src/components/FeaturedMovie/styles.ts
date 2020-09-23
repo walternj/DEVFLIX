@@ -4,6 +4,7 @@ import { MdPlaylistAdd, MdPlayArrow } from 'react-icons/md'
 export const Container= styled.section<{ImgUrl: string}>`
   overflow-x: visible;
   height: 100vh;
+  min-height: 100vw;
   width: 100vw;
   background-size: 'cover';
   /* background: ${props => `url(${props.ImgUrl})`}; */
