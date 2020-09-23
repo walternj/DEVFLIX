@@ -13,6 +13,7 @@ export default createGlobalStyle`
   html {
     overflow-x: hidden;
     overflow-y: overlay;
+    min-height: 100%;
   }
 
   body {
