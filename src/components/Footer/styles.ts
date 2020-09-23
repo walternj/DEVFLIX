@@ -18,6 +18,7 @@ export const Container = styled.footer`
     display: flex;
     align-items: flex-end;
     justify-content: center;
+    margin-right: 10px;
 
     > span {
       font-size: 12px;

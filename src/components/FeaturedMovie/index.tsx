@@ -2,7 +2,7 @@ import React from 'react'
 
 import { Link } from 'react-router-dom'
 
-import { Container, ButtonsContainer } from './styles'
+import { Container, ButtonsContainer, AddFavoriteIcon, PlayArrowIcon, BackImg } from './styles'
 
 interface FeatureProps {
   item?:{
@@ -32,15 +32,20 @@ const FeaturedMovie: React.FC<FeatureProps> = ({item}) => {
   if (description && description?.length > 200) {
     description = description?.substring(0, 350)+'...'
   }
+  const url = `https://image.tmdb.org/t/p/original${item?.backdrop_path}`
 
   return (
-    <Container
-      style={{
-        backgroundImage: `url(https://image.tmdb.org/t/p/original${item?.backdrop_path})`
-      }}
-    >
+    <Container ImgUrl={url}>
       <div className="featured--vertical">
-        <div className="featured--horizontal">
+        <BackImg
+            style={{
+              zIndex: -1,
+              backgroundImage: `linear-gradient(to right, var(--color-background) 30%, transparent 70% ),  url(https://image.tmdb.org/t/p/original${item?.backdrop_path}) `
+          }}
+        />
+        <div className="featured--horizontal"
+          style={{ }}
+        >
           <h1 className="featured--name">{item?.name}</h1>
           <div className="featured--info">
             <p className="featured--points">{item?.vote_average} points</p>
@@ -53,11 +58,11 @@ const FeaturedMovie: React.FC<FeatureProps> = ({item}) => {
           <ButtonsContainer>
             {/* <a href={`/watch/${item?.id}`} className="featured--watchbutton">Regarder</a> */}
             <Link to="/details"
-              className="featured--watchbutton">Regarder</Link>
-            <Link to={`/list/add/${item?.id}`}className="featured--mylistbutton">+ Ma Liste</Link>
+              className="featured--watchbutton"><PlayArrowIcon/></Link>
+            <Link to={`/list/add/${item?.id}`}className="featured--mylistbutton"><AddFavoriteIcon/></Link>
           </ButtonsContainer>
 
-          <p className="featured--genres"><strong>Genres: </strong>{genres.join(', ')}</p>
+          <p className="featured--genres">{genres.join(', ')}</p>
         </div>
       </div>
     </Container>

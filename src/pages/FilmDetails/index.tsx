@@ -54,15 +54,15 @@ const FilmDetails: React.FC = () => {
             movie.name ?
               <h1 className="featured--name">{movie?.name}</h1>
             :
-            <h1 className="featured--name">{movie?.title}</h1>
+              <h1 className="featured--name">{movie?.title}</h1>
           }
           <div className="featured--info">
             <p className="featured--points">{movie?.vote_average} <StarIcon /> </p>
             {
               movie?.first_air_date ?
-                <p className="featured--year">{movie?.first_air_date.slice(0, 4)}</p>
+                <p className="featured--year">{movie?.first_air_date.slice(0, 7)}</p>
               :
-                <p className="featured--year">{movie?.release_date.slice(0, 4)}</p>
+                <p className="featured--year">{movie?.release_date.slice(0, 7)}</p>
             }
             {
               movie?.number_of_seasons ?

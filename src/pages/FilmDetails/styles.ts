@@ -43,12 +43,13 @@ export const TextContainer = styled.div`
   display: flex;
   flex-direction: column;
   max-width: 1200px;
+  margin-right: 10px;
 
   .featured--name {
     font-size: 60px;
     font-weight: bold;
     margin-top: 30px;
-    margin-left: 10px;
+
     text-shadow: 3px 0px 10px rgba(0, 0, 0, 1);
   }
 
@@ -60,15 +61,14 @@ export const TextContainer = styled.div`
     line-height: 16px;
     padding: 0;
     margin-top: 15px;
-    margin-left: 10px;
+
     text-shadow: 3px 0px 10px rgba(0, 0, 0, 1);
 
     .featured--points,
     .featured--year,
     .featured--seasons {
       display: inline-block;
-      margin-right: 15px;
-
+      margin-right: 10px;
     }
 
     .featured--points {
@@ -92,7 +92,7 @@ export const TextContainer = styled.div`
 
   .featured--overview {
     margin-top: 15px;
-    margin-left: 10px;
+
     font-size: 20px;
     color: var(--color-white);
     text-shadow: 3px 0px 10px rgba(0, 0, 0, 1);
@@ -102,7 +102,6 @@ export const TextContainer = styled.div`
     text-overflow: ellipsis;
 
     @media (max-width:768PX) {
-      margin-right: 10px;
       font-size: 16px;
       max-width: 100%;
     }
