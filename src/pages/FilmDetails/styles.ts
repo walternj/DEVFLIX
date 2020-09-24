@@ -46,6 +46,7 @@ export const PlayerContainer = styled.div`
   width: 100%;
   height: 56.25vw;
   max-height: 506.25px;
+
   -webkit-box-shadow: -1px 7px 33px -3px rgba(235,23,23,1);
   -moz-box-shadow: -1px 7px 33px -3px rgba(235,23,23,1);
   box-shadow: -1px 7px 33px -3px rgba(235,23,23,1);

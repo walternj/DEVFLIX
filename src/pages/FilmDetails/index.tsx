@@ -14,6 +14,7 @@ const FilmDetails: React.FC = () => {
   movie?.genres.forEach(element => genres.push(element.name))
 
   useEffect(() =>{
+    window.scrollTo(0, 0);
     async function url() {
       if (movie?.videos?.results[0]) {
         let urlPlay = movie?.videos?.results[0].key
