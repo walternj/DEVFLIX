@@ -44,7 +44,7 @@ const MovieRow: React.FC<FilmData> = ({title, items, media}) => {
 
     dispatch({type: 'SET_FEATURED', value: chosenInfo})
 
-    history.push('/Details')
+    history.push('/details')
   }
 
   return (

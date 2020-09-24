@@ -93,7 +93,7 @@ export const Container= styled.section<{ImgUrl: string}>`
   }
 `;
 
-export const BackImg = styled.img`
+export const BackImg = styled.div`
   display: block;
   position: fixed;
   overflow-x: visible;

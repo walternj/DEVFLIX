@@ -17,9 +17,10 @@ export const Container = styled.div`
 
 `;
 
-export const BackImg = styled.img`
+export const BackImg = styled.div`
   display: block;
   position: fixed;
+  top: 0;
   width: 100vw;
   height: 100vh;
   background-position-x: center;
@@ -121,7 +122,7 @@ export const TextContainer = styled.div`
   .featured--genres {
     margin-top: 15px;
     margin-left: 10px;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 600;
     color: var(--color-red);
     text-shadow: 3px 0px 10px rgba(0, 0, 0, 1);
@@ -129,7 +130,6 @@ export const TextContainer = styled.div`
 `;
 
 const iconCSS= css`
-
   font-size: 18px;
   fill: var(--color-green-text);
   padding: 0;
