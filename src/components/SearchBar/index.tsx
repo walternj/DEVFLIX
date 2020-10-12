@@ -28,7 +28,7 @@ const SearchBar: React.FC = () => {
     }
     searchInputRef.current.value = ''
 
-  },[])
+  },[search])
 
   const handleInputOnBlur = useCallback(() => {
     setTimeout(() => {

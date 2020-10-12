@@ -1,4 +1,4 @@
-import { SetMyListAction, MyListState } from './types'
+import { MyListState } from './types'
 import { SET_MYLIST } from '../actions'
 
 let initialState:MyListState = {}
