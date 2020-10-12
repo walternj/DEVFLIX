@@ -4,7 +4,7 @@ import {
   Route,
 } from "react-router-dom"
 
-import { Home, FilmDetails } from '../pages'
+import { Home, FilmDetails, MyList } from '../pages'
 
 const Routes = () => (
   <Switch>
@@ -13,6 +13,9 @@ const Routes = () => (
     </Route>
     <Route path="/details" >
       <FilmDetails />
+    </Route>
+    <Route path="/mylist" >
+      <MyList />
     </Route>
   </Switch>
 )

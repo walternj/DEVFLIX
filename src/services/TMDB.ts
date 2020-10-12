@@ -1,15 +1,4 @@
 
-/*
-  - Originals netflix
-  - treanding
-  - top rated
-  - action
-  - comedy
-  - horror
-  - romance
-  - documentary
-*/
-
 export interface FilmData {
   slug?: string,
   title: string,
@@ -41,18 +30,18 @@ export interface FilmData {
   }]}
 }
 
-  const lang = navigator.language || 'en'
+const lang = navigator.language || 'en'
 
-  const basicFetch = async (endpoint: string) => {
-    try {
-      const req = await fetch(`${process.env.REACT_APP_API_BASE}${endpoint}`)
-      const json = await req.json()
-      return json
+const basicFetch = async (endpoint: string) => {
+  try {
+    const req = await fetch(`${process.env.REACT_APP_API_BASE}${endpoint}`)
+    const json = await req.json()
+    return json
 
-    } catch (error) {
-      console.log(error)
-    }
+  } catch (error) {
+    console.log(error)
   }
+}
 
 export default {
   getHomeList: async (): Promise<FilmData[]> => {
@@ -175,6 +164,12 @@ export default {
       }
     }
 
+  },
+
+  getMovieByKeyWord: async(keyword: string, pageNb=1, language=lang) => {
+    let list = await basicFetch(`/search/multi?query=${keyword}&language=${language}&page=${pageNb}&include_adult=false&api_key=${process.env.REACT_APP_API_KEY}&append_to_response=videos`)
+
+    return list
   }
 
 };

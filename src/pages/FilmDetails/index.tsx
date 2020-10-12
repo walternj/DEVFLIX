@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 
-import { MovieState } from '../../store/reducers/types';
-import TMDB from '../../services/TMDB';
+import { MovieState } from '../../store/reducers/types'
+import TMDB from '../../services/TMDB'
 
 import Player from '../../components/Player'
-import { Container, Content, BackImg, PlayerContainer, TextContainer, StarIcon } from './styles';
+import { Container, Content, BackImg, PlayerContainer, TextContainer, StarIcon } from './styles'
 
 const FilmDetails: React.FC = () => {
   const movie = useSelector<MovieState , MovieState["featuredMovie"]>(state => state.featuredMovie)

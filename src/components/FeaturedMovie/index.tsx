@@ -1,6 +1,6 @@
 import React from 'react'
-
 import { Link } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
 
 import { Container, ButtonsContainer, AddFavoriteIcon, PlayArrowIcon, BackImg } from './styles'
 
@@ -24,8 +24,9 @@ interface FeatureProps {
 }
 
 const FeaturedMovie: React.FC<FeatureProps> = ({item}) => {
-  let genres: string[] = []
+  const dispatch = useDispatch()
 
+  let genres: string[] = []
   item?.genres.forEach(element => genres.push(element.name))
 
   let description = item?.overview
@@ -59,7 +60,8 @@ const FeaturedMovie: React.FC<FeatureProps> = ({item}) => {
             {/* <a href={`/watch/${item?.id}`} className="featured--watchbutton">Regarder</a> */}
             <Link to="/details"
               className="featured--watchbutton"><PlayArrowIcon/></Link>
-            <Link to={`/list/add/${item?.id}`}className="featured--mylistbutton"><AddFavoriteIcon/></Link>
+            <button onClick={() => dispatch({type: 'SET_MYLIST', value: item})}
+            className="featured--mylistbutton"><AddFavoriteIcon/></button>
           </ButtonsContainer>
 
           <p className="featured--genres">{genres.join(', ')}</p>

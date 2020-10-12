@@ -1,5 +1,5 @@
 import { SetFeaturedAction, MovieState } from './types'
-import { SET_FEATURED } from '../actions/index'
+import { SET_FEATURED } from '../actions'
 
 let initialState:MovieState = {}
 

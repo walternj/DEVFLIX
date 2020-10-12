@@ -1,21 +1,33 @@
-import React, { useState, useEffect } from 'react';
-import { useHistory } from "react-router-dom";
+import React, { useState, useEffect } from 'react'
+import { useHistory } from "react-router-dom"
 
-import { Container, SearchForm, SearchIcon } from './styles';
+import SearchBar from '../SearchBar'
+
+import { Container } from './styles'
+
+const logoUrl = "https://fontmeme.com/permalink/200908/6f4370d71e0e7511ca088679fad14e1c.png"
 
 const Header: React.FC = () => {
   const [blackheader, setBlackHeader] = useState(false)
-  const [search, setSearch] = useState('')
+
   const history = useHistory()
 
   useEffect(() => {
     const input = document.getElementById('searchInput')
-    input.addEventListener("focus", function () {
+    let inputFocus: boolean
+
+    input.addEventListener("focus", () => {
+      inputFocus = true
       setBlackHeader(true)
     });
 
+    input.addEventListener('focusout', () => {
+      inputFocus = false
+      setBlackHeader(false)
+    })
+
     const scrollListener = () => {
-      if(window.scrollY > 10) {
+      if(window.scrollY > 10 || inputFocus) {
         setBlackHeader(true)
       } else {
         setBlackHeader(false)
@@ -28,30 +40,15 @@ const Header: React.FC = () => {
     }
   },[])
 
-  function handleSubmit(event: React.FormEvent) {
-    event.preventDefault()
-    alert('Submit Search')
-  }
-
   return (
     <Container background={blackheader} >
       <img className="header--logo"
-        src="https://fontmeme.com/permalink/200908/6f4370d71e0e7511ca088679fad14e1c.png" alt="Netflix"
+        src={logoUrl} alt="Devflix"
         onClick={() => history.push("/")}
     />
 
+      <SearchBar />
 
-      <SearchForm onSubmit={handleSubmit}>
-        <input
-          id="searchInput"
-
-          placeholder=""
-          value={search}
-          autoComplete="off"
-          onChange={e => setSearch(e.currentTarget.value)}
-        />
-        <SearchIcon />
-      </SearchForm>
       <div className="header--user">
         <a href="/">
           <img src="https://api.adorable.io/avatars/60/abott@adorable.png" alt="user"/>
@@ -61,4 +58,4 @@ const Header: React.FC = () => {
   )
 };
 
-export default Header;
+export default Header

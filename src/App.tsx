@@ -6,8 +6,8 @@ import { PersistGate } from 'redux-persist/integration/react'
 
 import GlobalStyles from './styles/GlobalStyles'
 import Routes from './routes'
-import Header from './components/Header';
-import Footer from './components/Footer';
+import Header from './components/Header'
+import Footer from './components/Footer'
 
 import {store, persistor} from './store'
 

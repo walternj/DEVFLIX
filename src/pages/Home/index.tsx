@@ -19,25 +19,25 @@ const Home: React.FC = () => {
     //get complet list
     const loadAll = async () => {
       let list = await TMDB.getHomeList()
+
       setMovieList(list)
 
       //get featured item
       let originals = list.filter(i => i.slug === 'originals')
 
-      let randomChosen = undefined
       let chosen = undefined
+      do{
+        let randomChosen = Math.floor(Math.random() * originals[0].items.results.length - 1)
 
-      while(chosen === undefined || null) {
-        randomChosen = Math.floor(Math.random() * originals[0].items.results.length - 1)
         chosen = originals[0].items.results[randomChosen]
-      }
+
+      } while(chosen === undefined || null || chosen.id === 63174 )
 
       let chosenInfo =  await TMDB.getMovieInfo(chosen.id, 'tv')
       setFeaturedData(chosenInfo)
       console.log('CHOSEN :', chosenInfo)
 
       dispatch({type: 'SET_FEATURED', value: chosenInfo})
-
     }
       loadAll()
 
@@ -70,4 +70,4 @@ const Home: React.FC = () => {
   );
 };
 
-export default Home;
+export default Home
