@@ -1,6 +1,7 @@
-import styled, {css} from 'styled-components';
+import styled, {css} from 'styled-components'
 import { MdPlaylistAdd } from 'react-icons/md'
 import { CgPlayListRemove } from 'react-icons/cg'
+
 
 
 export const Container = styled.button`
@@ -48,3 +49,4 @@ export const RemoveFavoriteIcon= styled(CgPlayListRemove).attrs({
 
   ${iconCSS}
 `;
+
