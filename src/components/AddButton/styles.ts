@@ -1,8 +1,7 @@
 import styled, {css} from 'styled-components'
 import { MdPlaylistAdd } from 'react-icons/md'
-import { CgPlayListRemove } from 'react-icons/cg'
 
-
+import removeIcon from '../../icons/playlist-remove.svg'
 
 export const Container = styled.button`
   display: flex;
@@ -34,6 +33,8 @@ export const Container = styled.button`
 const iconCSS= css`
   padding: 0;
   margin: 0;
+  width: 40px;
+  height: 40px;
 `;
 
 export const AddFavoriteIcon= styled(MdPlaylistAdd)`
@@ -41,12 +42,10 @@ export const AddFavoriteIcon= styled(MdPlaylistAdd)`
   ${iconCSS}
 `;
 
-export const RemoveFavoriteIcon= styled(CgPlayListRemove).attrs({
-  color:"red"
+export const RemoveFavoriteIcon = styled.svg.attrs({
+
 })`
-  fill: var(--color-red);
-
-
   ${iconCSS}
+  background-image: url(${removeIcon}) ;
+  background-repeat: no-repeat;
 `;
-
