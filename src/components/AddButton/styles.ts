@@ -40,7 +40,11 @@ export const AddFavoriteIcon= styled(MdPlaylistAdd)`
   ${iconCSS}
 `;
 
-export const RemoveFavoriteIcon= styled(CgPlayListRemove)`
+export const RemoveFavoriteIcon= styled(CgPlayListRemove).attrs({
+  color:"red"
+})`
   fill: var(--color-red);
+
+
   ${iconCSS}
 `;

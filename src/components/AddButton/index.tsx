@@ -9,27 +9,28 @@ import { MyListState } from '../../store/reducers/types';
 interface ButtonProps {
   onClick?: any
   itemID?: string | number
+
 }
 
 const AddButton: React.FC<ButtonProps> = ({onClick, itemID}) => {
-  const myListState = useSelector((state: MyListState) => state.myList)
+  const {myList} = useSelector((state:MyListState) => state)
 
   const [mylist, setMylist] = useState(null)
-  const [toggle, setToggle] = useState(false)
+  const [toggle, setToggle] = useState(true)
 
   useEffect(() => {
-    setMylist(myListState)
-    if(mylist !== null) {
+    setMylist(myList)
+    console.log('mylistState: ', myList)
+    if(mylist !== null || undefined) {
       const itemIndex = mylist.myList.findIndex(element => element.id === itemID)
       itemIndex !== -1 ? setToggle(false) : setToggle(true)
     }
 
-    setMylist(myListState)
-  },[myListState, onClick, itemID, mylist, toggle])
+  },[myList, onClick, itemID, mylist, toggle])
 
   return (
     <Container onClick={onClick} >
-      {toggle ? <AddFavoriteIcon/> : <RemoveFavoriteIcon />}
+      {toggle ? <AddFavoriteIcon /> : <RemoveFavoriteIcon />}
     </Container>
   );
 };
