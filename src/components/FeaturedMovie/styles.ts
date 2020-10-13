@@ -165,6 +165,6 @@ export const AddFavoriteIcon = styled(MdPlaylistAdd)`
 `;
 
 export const PlayArrowIcon = styled(MdPlayArrow)`
-fill: var(--color-primary);
+  fill: var(--color-primary);
   ${iconCSS}
 `;

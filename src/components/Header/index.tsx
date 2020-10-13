@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom"
 
 import SearchBar from '../SearchBar'
 
-import { Container } from './styles'
+import { Container, MyList } from './styles'
 
 const logoUrl = "https://fontmeme.com/permalink/200908/6f4370d71e0e7511ca088679fad14e1c.png"
 
@@ -54,6 +54,8 @@ const Header: React.FC = () => {
           <img src="https://api.adorable.io/avatars/60/abott@adorable.png" alt="user"/>
         </a>
       </div>
+
+      <MyList onClick={() => history.push("/mylist")} />
     </Container>
   )
 };

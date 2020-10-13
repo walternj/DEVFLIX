@@ -89,6 +89,10 @@ export const TextContainer = styled.div`
     }
   }
 
+  .featured--genres {
+      margin-bottom: 15px;
+  }
+
   @media (max-width:768px) {
     .featured--name {
       font-size: 32px;

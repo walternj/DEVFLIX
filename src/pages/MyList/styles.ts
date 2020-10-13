@@ -2,22 +2,21 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   display: flex;
+  flex-direction: column;
 
-
-  justify-content: center;
-  align-items: flex-start;
+  justify-content: flex-start;
+  align-items: center;
   align-content: flex-start;
 
   max-width: 100vw;
   min-height: 100vh;
-  margin: auto;
+
   padding-top: 70px;
 `;
 
 export const Content  = styled.div`
   display: inline-flex;
   flex-wrap: wrap;
-
 
   .mylist--item {
     display: flex;
@@ -32,6 +31,10 @@ export const Content  = styled.div`
 
       transform: scale(0.9);
       transition: all ease 0.2s;
+
+      -webkit-box-shadow: 0px 0px 16px -6px rgba(240,14,14,1);
+      -moz-box-shadow: 0px 0px 16px -6px rgba(240,14,14,1);
+      box-shadow: 0px 0px 16px -6px rgba(240,14,14,1);
     }
 
     > span {

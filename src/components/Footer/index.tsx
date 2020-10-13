@@ -7,7 +7,7 @@ const Footer: React.FC = () => {
   return (
     <Container>
       <div className="footer--left-container">
-        <p>Droit d'image à Netflix</p>
+        <p>Netflix Copyrights</p>
         <p>Powered by TMDB</p>
       </div>
       <div className="footer--right-container">

@@ -1,16 +1,22 @@
 import React, { useEffect, useState } from 'react'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 
 import { MovieState } from '../../store/reducers/types'
 import TMDB from '../../services/TMDB'
 
 import Player from '../../components/Player'
+import AddButton from '../../components/AddButton'
+
 import { Container, Content, BackImg, PlayerContainer, TextContainer, StarIcon } from './styles'
 
 const FilmDetails: React.FC = () => {
+  const dispatch = useDispatch()
   const movie = useSelector<MovieState , MovieState["featuredMovie"]>(state => state.featuredMovie)
+
   const [url, setUrl] = useState<string>()
+
   let genres: string[] = []
+
   movie?.genres.forEach(element => genres.push(element.name))
 
   useEffect(() =>{
@@ -58,7 +64,7 @@ const FilmDetails: React.FC = () => {
               <h1 className="featured--name">{movie?.title}</h1>
           }
           <div className="featured--info">
-            <p className="featured--points">{movie?.vote_average} <StarIcon /> </p>
+            <p className="featured--points">{movie?.vote_average} <StarIcon /></p>
             {
               movie?.first_air_date ?
                 <p className="featured--year">{movie?.first_air_date.slice(0, 7)}</p>
@@ -74,6 +80,9 @@ const FilmDetails: React.FC = () => {
           </div>
           <span className="featured--overview">{movie?.overview}</span>
           <p className="featured--genres">{genres.join(', ')}</p>
+          <AddButton
+            itemID={movie.id}
+            onClick={() => {dispatch({type: 'SET_MYLIST', value: movie})}} />
         </TextContainer>
       </Content>
 

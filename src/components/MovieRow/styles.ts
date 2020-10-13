@@ -77,6 +77,10 @@ export const ListContainer = styled.div`
         height: 225px;
         transform: scale(0.9);
         transition: all ease 0.2s;
+
+        -webkit-box-shadow: 0px 8px 16px -6px rgba(0,0,0,1);
+        -moz-box-shadow: 0px 8px 16px -6px rgba(0,0,0,1);
+        box-shadow: 0px 8px 16px -6px rgba(0,0,0,1);
       }
 
       .movieRow--icon-container {
@@ -104,7 +108,10 @@ export const ListContainer = styled.div`
 
       &:hover {
         >img {
-          transform: scale(1)
+          transform: scale(1);
+          -webkit-box-shadow: 0px 0px 8px 0px rgba(255,8,8,1);
+          -moz-box-shadow: 0px 0px 8px 0px rgba(255,8,8,1);
+          box-shadow: 0px 0px 8px 0px rgba(255,8,8,1);
         }
 
         .movieRow--icon-container {

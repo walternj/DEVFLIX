@@ -39,7 +39,7 @@ const SearchResults: React.FC<Props> = ({keyword}) => {
   const [resultList, setResultList] = useState<SearchResult[]>()
 
   const dispatch = useDispatch()
-  const history = useHistory();
+  const history = useHistory()
 
   useLayoutEffect(() => {
     async function SearchByKeyword () {

@@ -1,4 +1,5 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
+import {MdPlaylistPlay} from 'react-icons/md'
 
 export const Container = styled.header<{background: boolean}>`
   display: flex;
@@ -47,5 +48,21 @@ export const Container = styled.header<{background: boolean}>`
       > a img { height: 28px}
     }
   }
+`;
+
+const iconCSS = css`
+  width: 40px;
+  height: 40px;
+
+  cursor: pointer;
+`;
+
+export const MyList = styled(MdPlaylistPlay)`
+  ${iconCSS}
+  fill: var(--color-green-text);
+
+  position: absolute;
+  right: 18px;
+  top: 70px;
 `;
 
