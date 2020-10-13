@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux'
 
 import featuredMovie from './featuredMovie'
-import myList from './myList'
+import myList_reducer from './myList_reducer'
 
 export default combineReducers({
   featuredMovie,
-  myList
+  myList_reducer
 })
