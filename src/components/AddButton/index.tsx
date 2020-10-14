@@ -41,22 +41,20 @@ export interface MyList {
 }
 
 const AddButton: React.FC<ButtonProps> = ({onClick, itemID}) => {
-  const myListState = useSelector<MyListState, MyListState>(state => state)
+  let myListState: MyListState
+  myListState = useSelector<MyListState>(state => state.myList)
 
-  const [mylist, setMylist] = useState(null)
   const [toggle, setToggle] = useState(true)
 
   useEffect(() => {
-    setMylist(myListState)
-    console.log('mylistState: ', mylist)
-    if(mylist !== null || undefined) {
-      if (mylist.myList !== undefined) {
-        const itemIndex = mylist.myList.findIndex(item => item.id === itemID)
+    console.log('mylistState: ', myListState)
+      if(myListState?.myList) {
+        console.log('passou aki')
+        const itemIndex = myListState.myList.findIndex(item => item.id === itemID)
         itemIndex !== -1 ? setToggle(false) : setToggle(true)
       }
-    }
 
-  },[mylist, onClick, itemID, toggle, myListState])
+  },[itemID, myListState])
 
   return (
     <Container onClick={onClick} >
