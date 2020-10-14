@@ -59,7 +59,6 @@ const FeaturedMovie: React.FC<FeatureProps> = ({item}) => {
           <span className="featured--overview">{description}</span>
 
           <ButtonsContainer>
-            {/* <a href={`/watch/${item?.id}`} className="featured--watchbutton">Regarder</a> */}
             <Link to="/details"
               className="featured--watchbutton">
                 <PlayArrowIcon/>

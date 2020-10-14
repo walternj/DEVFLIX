@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useCallback, useState } from 'react'
+import React, { useCallback } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 import { MyListState } from '../../store/reducers/types';
@@ -8,13 +8,8 @@ import { Container, Content } from './styles'
 const MyList: React.FC = () => {
   const history = useHistory()
   const dispatch = useDispatch()
-  const mylistState = useSelector<MyListState, MyListState["myList"]>(state => state.myList)
-
-  const [mylist, setMylist] = useState(null)
-
-  useLayoutEffect(() => {
-    setMylist(mylistState)
-  },[mylistState])
+  let myListState: MyListState
+  myListState = useSelector<MyListState>(state => state.myList)
 
   const handleClick = useCallback((item) => {
     dispatch({type:'SET_FEATURED', value: item})
@@ -26,7 +21,7 @@ const MyList: React.FC = () => {
     <Container>
       <h1>My List</h1>
       <Content>
-      {mylist && mylist.myList.map(item => (
+      {myListState?.myList && myListState?.myList.map(item => (
         <div key={item.id} className="mylist--item"
           onClick={() => handleClick(item)}
         >

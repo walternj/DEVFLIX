@@ -24,7 +24,6 @@ const FilmDetails: React.FC = () => {
     async function url() {
       if (movie?.videos?.results[0]) {
         let urlPlay = movie?.videos?.results[0].key
-          console.log('KEY :', urlPlay)
         setUrl(urlPlay)
 
       } else {
@@ -33,10 +32,9 @@ const FilmDetails: React.FC = () => {
           if(englishVideoCode?.videos?.results[0]) {
             let key = englishVideoCode?.videos?.results[0].key
             setUrl(key)
-            console.log('ENGLISH KEY :', key)
+
           } else {
             setUrl('GV3HUDMQ-F8&ab')
-            console.log('ENGLISH KEY : undefined')
           }
         }
       }

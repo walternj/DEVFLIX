@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 import { AiFillPlayCircle } from 'react-icons/ai'
@@ -30,17 +30,10 @@ const MovieRow: React.FC<FilmData> = ({title, items, media}) => {
     setScrollX(x)
   }
 
-  useEffect(() => {
-    console.log('items', items.results)
-
-  }, [items])
-
   const handleClick = async(id: number, media_type: string) => {
     let chosenMedia= media_type ? media_type : media
-    console.log('MEDIA_TYPE :', chosenMedia)
-    let chosenInfo =  await TMDB.getMovieInfo(id, chosenMedia)
 
-    console.log('CHOSEN_ITEM :', chosenInfo)
+    let chosenInfo =  await TMDB.getMovieInfo(id, chosenMedia)
 
     dispatch({type: 'SET_FEATURED', value: chosenInfo})
 

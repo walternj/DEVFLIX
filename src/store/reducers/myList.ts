@@ -9,10 +9,7 @@ export default function setMyList(state = initialState, action: SetMyListAction)
   let nextState:any
   switch (action.type) {
     case SET_MYLIST:
-      console.log('actionID', action.value.id)
-
       if(state?.myList === undefined || null) {
-        console.log('first condition')
         nextState = {
           ...state,
           myList: [action.value]
@@ -22,14 +19,12 @@ export default function setMyList(state = initialState, action: SetMyListAction)
         const itemIndex = state.myList.findIndex(item => item.id === action.value.id)
 
         if(itemIndex !== -1) {
-          console.log('second condition')
           nextState = {
             ...state,
             myList: state.myList.filter(element => (element.id !== action.value.id))
           }
 
         } else {
-          console.log('else')
           nextState = {
             ...state,
             myList: [...state.myList, action.value]

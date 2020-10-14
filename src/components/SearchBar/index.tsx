@@ -33,17 +33,14 @@ const SearchBar: React.FC = () => {
   const handleInputOnBlur = useCallback(() => {
     setTimeout(() => {
       searchInputRef.current.value = ''
-      console.log(buttonRef.current.getAttribute('focus'))
 
       if(document.hasFocus){
-          setToggleIcon(false)
+        setToggleIcon(false)
 
-        } else {
+      } else {
+        setToggleIcon(true)
 
-          setToggleIcon(true)
-        }
-
-
+      }
     }, 1000);
 
   },[])
